@@ -1,8 +1,10 @@
 import * as React from 'react';
 import './styles/App.css';
+
+import logo from './logo.svg';
+
 import Hello from './components/Hello';
 import StatefulHello from './components/StatefulHello';
-import logo from './logo.svg';
 
 class App extends React.Component {
   public render() {
