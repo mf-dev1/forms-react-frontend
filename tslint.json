@@ -1,11 +1,21 @@
 {
   "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
   // "defaultSeverity": "warning",
+  "rules": {
+    "ordered-imports": false,
+    "no-magic-numbers": [false],
+    "interface-name": false,
+    "no-implicit-dependencies": false,
+    "no-floating-promises": [true, "Promise"],
+    "comment-format": [true, "check-space"],
+    "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"]
+  },
   "linterOptions": {
     "exclude": [
       "config/**/*.js",
       "node_modules/**/*.ts",
-      "coverage/lcov-report/*.js"
+      "coverage/lcov-report/*.js",
+      "src/registerServiceWorker.ts"
     ]
   }
 }

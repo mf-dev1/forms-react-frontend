@@ -18,10 +18,12 @@ class StatefullHello extends React.Component<Props, State> {
     this.state = { currentEnthusiasm: props.enthusiasmLevel || 1 };
   }
 
-  onIncrement = () => this._updateEnthusiasm(this.state.currentEnthusiasm + 1);
-  onDecrement = () => this._updateEnthusiasm(this.state.currentEnthusiasm - 1);
+  public onIncrement = () =>
+    this._updateEnthusiasm(this.state.currentEnthusiasm + 1);
+  public onDecrement = () =>
+    this._updateEnthusiasm(this.state.currentEnthusiasm - 1);
 
-  render() {
+  public render() {
     const { name } = this.props;
 
     if (this.state.currentEnthusiasm <= 0) {
