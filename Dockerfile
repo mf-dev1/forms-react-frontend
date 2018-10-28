@@ -10,6 +10,7 @@ RUN yarn build
 FROM nginx:1.15-alpine
 COPY --from=build-deps /usr/src/app/build /usr/share/nginx/html
 EXPOSE 80
+# RUN /bin/sh -c "apk add --no-cache bash"
 CMD ["nginx", "-g", "daemon off;"]
 
 # Test docker on localhost
