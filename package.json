@@ -26,11 +26,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && tslint"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "src/**/*.{ts,tsx,json,scss}": [
+      "tslint",
       "prettier --single-quote --write",
       "git add"
     ]
