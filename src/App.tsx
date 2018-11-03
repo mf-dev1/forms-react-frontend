@@ -1,30 +1,29 @@
 import * as React from 'react';
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'react-router-redux';
+import store, { history } from './store';
+// Styles
 import './styles/App.css';
 
-import logo from './logo.svg';
+// routes
+import routes from './routes';
 
-import Hello from './components/Hello';
-// import StatefulHello from './components/StatefulHello';
-import ReactHello from './containers/ReactHello';
-import ReduxHello from './containers/ReduxHello';
+// common components
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 class App extends React.Component {
   public render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <br />
-        <Hello name="World" enthusiasmLevel={1} />
-        {/* <StatefulHello name="TypeScript" enthusiasmLevel={10} /> */}
-        <ReactHello name="TypeScript" enthusiasmLevel={10} />
-        <ReduxHello />
-      </div>
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <div className="App">
+            <Header />
+            <div className="wrap">{routes}</div>
+            <Footer />
+          </div>
+        </ConnectedRouter>
+      </Provider>
     );
   }
 }
