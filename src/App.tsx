@@ -4,7 +4,9 @@ import './styles/App.css';
 import logo from './logo.svg';
 
 import Hello from './components/Hello';
-import StatefulHello from './components/StatefulHello';
+// import StatefulHello from './components/StatefulHello';
+import ReactHello from './containers/ReactHello';
+import ReduxHello from './containers/ReduxHello';
 
 class App extends React.Component {
   public render() {
@@ -19,7 +21,9 @@ class App extends React.Component {
         </p>
         <br />
         <Hello name="World" enthusiasmLevel={1} />
-        <StatefulHello name="TypeScript" enthusiasmLevel={10} />
+        {/* <StatefulHello name="TypeScript" enthusiasmLevel={10} /> */}
+        <ReactHello name="TypeScript" enthusiasmLevel={10} />
+        <ReduxHello />
       </div>
     );
   }
