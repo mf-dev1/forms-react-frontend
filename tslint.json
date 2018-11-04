@@ -10,9 +10,10 @@
     "comment-format": [true, "check-space"],
     "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"],
     "object-literal-sort-keys": false,
-    "no-console": true,
-    "no-debugger": true,
-    "jsx-boolean-value": false
+    "no-console": false,
+    "no-debugger": false,
+    "jsx-boolean-value": false,
+    "no-submodule-imports": false
   },
   "linterOptions": {
     "exclude": [
