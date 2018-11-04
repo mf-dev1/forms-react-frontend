@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -20,11 +21,12 @@ class Home extends React.Component<Props> {
   public render() {
     const title = this.props.title;
     const items = this.props.items;
+    const MyLink = (props: any) => <Link to={props.href} {...props} />;
 
     const pageContent = (
       <List>
         {items.map((item, i) => (
-          <ListItem>
+          <ListItem component={MyLink} href={`/detail/${item.id}`}>
             <ListItemIcon>
               <FolderIcon />
             </ListItemIcon>
