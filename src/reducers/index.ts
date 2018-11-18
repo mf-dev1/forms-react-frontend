@@ -1,42 +1,30 @@
-import {
-  ADD_ARTICLE,
-  INCREASE_ENTHUSIASM,
-  DECREASE_ENTHUSIASM
-} from '../constants/action-types';
-const initialState = {
-  articles: [],
-  enthusiasmLevel: 5,
-  home: {
-    title: 'Answer the question.',
-    items: [
-      { id: 1, text: 'Where you want to go?' },
-      { id: 2, text: 'What movie is better?' },
-      { id: 3, text: 'What is your favorite movie genre?' },
-      { id: 4, text: 'What is your favourite time of day?' }
-    ]
-  },
-  detail: {
-    title: 'What is your favorite movie genre?',
-    items: [
-      { id: 1, text: 'Action' },
-      { id: 2, text: 'Documentary' },
-      { id: 3, text: 'Drama' },
-      { id: 4, text: 'Horror' },
-      { id: 4, text: 'Thriller' },
-      { id: 4, text: 'Western' }
-    ]
-  }
-};
-const rootReducer = (state = initialState, action: any) => {
-  switch (action.type) {
-    case ADD_ARTICLE:
-      return { ...state, articles: [...state.articles, action.payload] };
-    case INCREASE_ENTHUSIASM:
-      return { ...state, enthusiasmLevel: state.enthusiasmLevel + 1 };
-    case DECREASE_ENTHUSIASM:
-      return { ...state, enthusiasmLevel: state.enthusiasmLevel - 1 };
-    default:
-      return state;
-  }
-};
+import { combineReducers, Dispatch, Action, AnyAction } from 'redux';
+
+// import your Home Module reducers here and combine them
+// Placed in same directory
+import { articleReducer, ArticleState } from './articleReducer';
+import { counterReducer, CounterState } from './counterReducer';
+import { detailReducer, DetailState } from './detailReducer';
+import { homeReducer, HomeState } from './homeReducer';
+
+// The top-level state object
+export interface ApplicationState {
+  article: ArticleState;
+  counter: CounterState;
+  detail: DetailState;
+  home: HomeState;
+}
+
+// Additional props for connected React components. This prop is passed by default with `connect()`
+export interface ConnectedReduxProps<A extends Action = AnyAction> {
+  dispatch: Dispatch<A>;
+}
+
+const rootReducer = combineReducers<ApplicationState>({
+  article: articleReducer,
+  counter: counterReducer,
+  detail: detailReducer,
+  home: homeReducer,
+});
+
 export default rootReducer;

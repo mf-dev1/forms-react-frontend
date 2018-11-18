@@ -1,12 +1,10 @@
-import {
-  ADD_ARTICLE,
-  INCREASE_ENTHUSIASM,
-  DECREASE_ENTHUSIASM
-} from '../constants/action-types';
+export * from './articleActions';
+export * from './counterActions';
+export * from './detailActions';
+export * from './homeActions';
 
-export const addArticle = (article: any) => ({
-  type: ADD_ARTICLE,
-  payload: article
-});
-export const increaseEnthusiasm = () => ({ type: INCREASE_ENTHUSIASM });
-export const decreaseEnthusiasm = () => ({ type: DECREASE_ENTHUSIASM });
+export interface Action {
+  type: string;
+  payload?: {};
+  params?: {};
+}

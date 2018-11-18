@@ -1,9 +1,16 @@
 import * as React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 
-class Footer extends React.Component {
+const styles = {
+  footer: {
+    margin: '0 auto 50px',
+  },
+};
+
+class Footer extends React.Component<any> {
   public render() {
-    return <footer />;
+    return <footer className={this.props.classes.footer} />;
   }
 }
 
-export default Footer;
+export default withStyles(styles)(Footer);

@@ -7,7 +7,7 @@ import * as actions from '../actions';
 function mapStateToProps(state: any) {
   return {
     enthusiasmLevel: state.enthusiasmLevel,
-    name: 'Redux'
+    name: 'Redux',
   };
 }
 
@@ -15,7 +15,7 @@ function mapStateToProps(state: any) {
 function mapDispatchToProps(dispatch: any) {
   return {
     onIncrement: () => dispatch(actions.increaseEnthusiasm()),
-    onDecrement: () => dispatch(actions.decreaseEnthusiasm())
+    onDecrement: () => dispatch(actions.decreaseEnthusiasm()),
   };
 }
 

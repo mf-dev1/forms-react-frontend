@@ -1,6 +1,6 @@
 {
+  "defaultSeverity": "error",
   "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
-  // "defaultSeverity": "warning",
   "rules": {
     "ordered-imports": false,
     "no-magic-numbers": [false],
@@ -8,7 +8,14 @@
     "no-implicit-dependencies": false,
     "no-floating-promises": [true, "Promise"],
     "comment-format": [true, "check-space"],
-    "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"],
+    "no-any": false,
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore",
+      "allow-pascal-case"
+    ],
     "object-literal-sort-keys": false,
     "no-console": false,
     "no-debugger": false,
