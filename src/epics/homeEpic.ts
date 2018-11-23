@@ -22,7 +22,7 @@ const fetchHome: Epic<Action, ApplicationState> = (action$, state$) =>
 		})
 	);
 	*/
-const fetchHome: any = action$ =>
+export const fetchHome: any = action$ =>
   action$.pipe(
     ofType(actionTypes.FETCH_HOME),
     mergeMap(action =>
@@ -32,4 +32,4 @@ const fetchHome: any = action$ =>
     )
   );
 
-export default fetchHome;
+// export default fetchHome;

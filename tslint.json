@@ -20,6 +20,7 @@
     "no-console": false,
     "no-debugger": false,
     "jsx-boolean-value": false,
+    "jsx-no-lambda": false,
     "no-submodule-imports": false
   },
   "linterOptions": {

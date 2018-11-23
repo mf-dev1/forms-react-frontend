@@ -8,18 +8,24 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Grid from '@material-ui/core/Grid';
 import { withStyles, WithStyles } from '@material-ui/core/styles';
 import { DetailItem } from '../reducers/detailReducer';
+import Button from '@material-ui/core/Button';
 
-const styles = {
+const styles = theme => ({
   grid: {
     maxWidth: 480,
     margin: '0 auto',
   },
-};
+  button: {
+    margin: theme.spacing.unit,
+    'text-decoration': 'none',
+  },
+});
 
 interface DetailProps {
   id: string;
   title: string;
   items: DetailItem[];
+  onSave: (id: string) => any;
 }
 
 type AllProps = DetailProps & WithStyles<typeof styles>;
@@ -37,6 +43,9 @@ class Detail extends React.Component<AllProps, State> {
   public render() {
     const title = this.props.title;
     const items = this.props.items || [];
+    const onSave = () => {
+      this.props.onSave(this.state.formValue);
+    };
 
     return (
       <div className="detail-container">
@@ -65,12 +74,29 @@ class Detail extends React.Component<AllProps, State> {
                   <FormControlLabel
                     key={item.id.toString()}
                     value={item.id.toString()}
-                    control={<Radio />}
+                    control={<Radio color="primary" />}
                     label={item.title}
                   />
                 ))}
               </RadioGroup>
             </FormControl>
+          </Grid>
+          <Grid item>
+            <Button
+              href="#/"
+              variant="contained"
+              className={this.props.classes.button}
+            >
+              Back
+            </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              className={this.props.classes.button}
+              onClick={onSave}
+            >
+              Save
+            </Button>
           </Grid>
         </Grid>
       </div>

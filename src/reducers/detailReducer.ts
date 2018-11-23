@@ -53,6 +53,15 @@ const reducer: Reducer<DetailState> = (
     case actionTypes.FETCH_DETAIL_TITLE_FAILED: {
       return { ...state, loading: false, errors: action.payload as string };
     }
+    case actionTypes.VOTE_DETAIL: {
+      return { ...state, loading: true };
+    }
+    case actionTypes.VOTE_DETAIL_FULFILLED: {
+      return { ...state, loading: false, meta: action.payload as Meta };
+    }
+    case actionTypes.VOTE_DETAIL_FAILED: {
+      return { ...state, loading: false, errors: action.payload as string };
+    }
     default:
       return state;
   }

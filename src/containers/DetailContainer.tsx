@@ -2,7 +2,11 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ApplicationState } from '../reducers';
-import { fetchDetail, fetchDetailTitle } from '../actions/detailActions';
+import {
+  fetchDetail,
+  fetchDetailTitle,
+  voteDetail,
+} from '../actions/detailActions';
 import Detail from '../components/Detail';
 import { DetailState } from '../reducers/detailReducer';
 import { ConnectedReduxProps } from '../reducers/index';
@@ -11,6 +15,7 @@ import { RouteComponentProps } from 'react-router-dom';
 interface PropsFromDispatch {
   fetchDetail: (id: string) => any;
   fetchDetailTitle: (id: string) => any;
+  voteDetail: (id: string) => any;
 }
 
 interface RouteParams {
@@ -37,7 +42,16 @@ class DetailContainer extends React.Component<AllProps> {
     if (this.props.loading) {
       return <div className="home-container">Loading...</div>;
     } else {
-      return <Detail id={id} title={title} items={items} />;
+      return (
+        <Detail
+          id={id}
+          title={title}
+          items={items}
+          onSave={(optionId: string) => {
+            this.props.voteDetail(optionId);
+          }}
+        />
+      );
     }
   }
 }
@@ -56,6 +70,7 @@ const mapDispatchToProps = dispatch => {
     {
       fetchDetail,
       fetchDetailTitle,
+      voteDetail,
     },
     dispatch
   );

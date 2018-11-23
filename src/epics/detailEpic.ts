@@ -8,7 +8,7 @@ import {
   voteDetailFulfilled,
 } from '../actions/detailActions';
 
-const fetchDetail: any = action$ =>
+export const fetchDetail: any = action$ =>
   action$.pipe(
     ofType(actionTypes.FETCH_DETAIL),
     mergeMap((action: any) =>
@@ -38,4 +38,4 @@ export const voteDetail: any = action$ =>
     )
   );
 
-export default fetchDetail;
+// export default fetchDetail;
