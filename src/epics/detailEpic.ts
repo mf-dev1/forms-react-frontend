@@ -33,7 +33,7 @@ export const voteDetail: any = action$ =>
     ofType(actionTypes.VOTE_DETAIL),
     mergeMap((action: any) =>
       ajax
-        .getJSON(`http://localhost:3005/api/Forms/${action.payload}`)
+        .post(`http://localhost:3005/api/Questions/${action.payload}/vote`)
         .pipe(map(response => voteDetailFulfilled(response)))
     )
   );

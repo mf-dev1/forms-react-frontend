@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { ApplicationState } from '../reducers';
 import { fetchHome } from '../actions/homeActions';
 import Home from '../components/Home';
+import Loader from '../components/Loader';
 import { HomeState } from '../reducers/homeReducer';
 import { ConnectedReduxProps } from '../reducers/index';
 import { RouteComponentProps } from 'react-router-dom';
@@ -26,7 +27,7 @@ class HomeContainer extends React.Component<AllProps> {
     const items = this.props.data || [];
 
     if (this.props.loading) {
-      return <div className="home-container">Loading...</div>;
+      return <Loader />;
     } else {
       return <Home items={items} />;
     }

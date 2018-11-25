@@ -16,6 +16,7 @@ export interface Meta {
 
 export interface DetailState {
   readonly loading: boolean;
+  readonly voted: boolean;
   readonly data?: DetailItem[];
   readonly errors?: string;
   readonly meta?: Meta;
@@ -23,6 +24,7 @@ export interface DetailState {
 
 const initialState: DetailState = {
   loading: true,
+  voted: false,
   data: [],
   errors: undefined,
   meta: undefined,
@@ -57,7 +59,7 @@ const reducer: Reducer<DetailState> = (
       return { ...state, loading: true };
     }
     case actionTypes.VOTE_DETAIL_FULFILLED: {
-      return { ...state, loading: false, meta: action.payload as Meta };
+      return { ...state, loading: false, voted: true };
     }
     case actionTypes.VOTE_DETAIL_FAILED: {
       return { ...state, loading: false, errors: action.payload as string };

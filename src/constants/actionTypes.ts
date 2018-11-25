@@ -3,13 +3,6 @@
  * @type {Object}
  */
 const actionTypes = {
-  // article reducer
-  ADD_ARTICLE: 'ADD_ARTICLE',
-
-  // counter reducer
-  INCREASE_ENTHUSIASM: 'INCREASE_ENTHUSIASM',
-  DECREASE_ENTHUSIASM: 'DECREASE_ENTHUSIASM',
-
   // home reducer
   FETCH_HOME: 'FETCH_HOME',
   FETCH_HOME_FULFILLED: 'FETCH_HOME_FULFILLED',

@@ -2,15 +2,11 @@ import { combineReducers, Dispatch, Action, AnyAction } from 'redux';
 
 // import your Home Module reducers here and combine them
 // Placed in same directory
-import { articleReducer, ArticleState } from './articleReducer';
-import { counterReducer, CounterState } from './counterReducer';
 import { detailReducer, DetailState } from './detailReducer';
 import { homeReducer, HomeState } from './homeReducer';
 
 // The top-level state object
 export interface ApplicationState {
-  article: ArticleState;
-  counter: CounterState;
   detail: DetailState;
   home: HomeState;
 }
@@ -21,8 +17,6 @@ export interface ConnectedReduxProps<A extends Action = AnyAction> {
 }
 
 const rootReducer = combineReducers<ApplicationState>({
-  article: articleReducer,
-  counter: counterReducer,
   detail: detailReducer,
   home: homeReducer,
 });

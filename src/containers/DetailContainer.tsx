@@ -7,10 +7,12 @@ import {
   fetchDetailTitle,
   voteDetail,
 } from '../actions/detailActions';
-import Detail from '../components/Detail';
 import { DetailState } from '../reducers/detailReducer';
 import { ConnectedReduxProps } from '../reducers/index';
 import { RouteComponentProps } from 'react-router-dom';
+import Detail from '../components/Detail';
+import DetailResults from '../components/DetailResults';
+import Loader from '../components/Loader';
 
 interface PropsFromDispatch {
   fetchDetail: (id: string) => any;
@@ -40,7 +42,9 @@ class DetailContainer extends React.Component<AllProps> {
     const items = this.props.data || [];
 
     if (this.props.loading) {
-      return <div className="home-container">Loading...</div>;
+      return <Loader />;
+    } else if (this.props.voted) {
+      return <DetailResults id={id} title={title} items={items} />;
     } else {
       return (
         <Detail
@@ -59,6 +63,7 @@ class DetailContainer extends React.Component<AllProps> {
 const mapStateToProps = (state: ApplicationState) => {
   return {
     loading: state.detail.loading,
+    voted: state.detail.voted,
     meta: state.detail.meta,
     data: state.detail.data,
     errors: state.detail.errors,
