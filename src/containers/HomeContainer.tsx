@@ -5,6 +5,7 @@ import { ApplicationState } from '../reducers';
 import { fetchHome } from '../actions/homeActions';
 import Home from '../components/Home';
 import Loader from '../components/Loader';
+import ConnectionError from '../components/ConnectionError';
 import { HomeState } from '../reducers/homeReducer';
 import { ConnectedReduxProps } from '../reducers/index';
 import { RouteComponentProps } from 'react-router-dom';
@@ -28,6 +29,8 @@ class HomeContainer extends React.Component<AllProps> {
 
     if (this.props.loading) {
       return <Loader />;
+    } else if (this.props.errors) {
+      return <ConnectionError />;
     } else {
       return <Home items={items} />;
     }

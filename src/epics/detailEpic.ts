@@ -37,5 +37,3 @@ export const voteDetail: any = action$ =>
         .pipe(map(response => voteDetailFulfilled(response)))
     )
   );
-
-// export default fetchDetail;

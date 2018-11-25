@@ -33,10 +33,9 @@ for more commands refer `package.json`
 Application use REST-API: forms-rest-api. More infromations in readme. 
 
 ## Todo
-- Vote button, Back button
-- Save votes in api
-- Show charts
 - Epics/Api layer refactoring
+- Show charts
+- HOC for loading and error
 - Tests
 
 ## Deployment

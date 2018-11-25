@@ -13,6 +13,7 @@ import { RouteComponentProps } from 'react-router-dom';
 import Detail from '../components/Detail';
 import DetailResults from '../components/DetailResults';
 import Loader from '../components/Loader';
+import ConnectionError from '../components/ConnectionError';
 
 interface PropsFromDispatch {
   fetchDetail: (id: string) => any;
@@ -36,6 +37,13 @@ class DetailContainer extends React.Component<AllProps> {
     this.props.fetchDetailTitle(id);
   }
 
+  public componentDidUpdate(prevProps, prevState) {
+    const id = this.props.match.params.id;
+    if (!prevProps.voted && this.props.voted) {
+      this.props.fetchDetail(id);
+    }
+  }
+
   public render() {
     const id = this.props.match.params.id;
     const title = this.props.meta ? this.props.meta.title : '';
@@ -43,6 +51,8 @@ class DetailContainer extends React.Component<AllProps> {
 
     if (this.props.loading) {
       return <Loader />;
+    } else if (this.props.errors) {
+      return <ConnectionError />;
     } else if (this.props.voted) {
       return <DetailResults id={id} title={title} items={items} />;
     } else {
