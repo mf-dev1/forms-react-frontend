@@ -12,8 +12,7 @@ import { ConnectedReduxProps } from '../reducers/index';
 import { RouteComponentProps } from 'react-router-dom';
 import Detail from '../components/Detail';
 import DetailResults from '../components/DetailResults';
-import Loader from '../components/Loader';
-import ConnectionError from '../components/ConnectionError';
+import WithLoading from '../components/WithLoading';
 
 interface PropsFromDispatch {
   fetchDetail: (id: string) => any;
@@ -46,18 +45,29 @@ class DetailContainer extends React.Component<AllProps> {
 
   public render() {
     const id = this.props.match.params.id;
+    const loading = this.props.loading;
+    const errors = this.props.errors;
     const title = this.props.meta ? this.props.meta.title : '';
     const items = this.props.data || [];
 
-    if (this.props.loading) {
-      return <Loader />;
-    } else if (this.props.errors) {
-      return <ConnectionError />;
-    } else if (this.props.voted) {
-      return <DetailResults id={id} title={title} items={items} />;
+    const DetailWithLoading = WithLoading(Detail);
+    const DetailResultsWithLoading = WithLoading(DetailResults);
+
+    if (this.props.voted) {
+      return (
+        <DetailResultsWithLoading
+          loading={loading}
+          errors={errors}
+          id={id}
+          title={title}
+          items={items}
+        />
+      );
     } else {
       return (
-        <Detail
+        <DetailWithLoading
+          loading={loading}
+          errors={errors}
           id={id}
           title={title}
           items={items}

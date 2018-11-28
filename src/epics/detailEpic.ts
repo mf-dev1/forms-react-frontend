@@ -1,39 +1,32 @@
-import { ajax } from 'rxjs/observable/dom/ajax';
-import { ofType } from 'redux-observable';
-import { mergeMap, map } from 'rxjs/operators';
-import actionTypes from '../constants/actionTypes';
-import {
-  fetchDetailFulfilled,
-  fetchDetailTitleFulfilled,
-  voteDetailFulfilled,
-} from '../actions/detailActions';
+import * as actionTypes from '../constants/actionTypes';
+import { fetchData } from '../utils/dataHelper';
 
-export const fetchDetail: any = action$ =>
-  action$.pipe(
-    ofType(actionTypes.FETCH_DETAIL),
-    mergeMap((action: any) =>
-      ajax
-        .getJSON(`http://localhost:3005/api/Forms/${action.payload}/questions`)
-        .pipe(map(response => fetchDetailFulfilled(response)))
-    )
-  );
+export const fetchDetail = fetchData(
+  'getJSON',
+  `Forms/:id/questions`,
+  null,
+  null,
+  actionTypes.FETCH_DETAIL,
+  actionTypes.FETCH_DETAIL_FULFILLED,
+  actionTypes.FETCH_DETAIL_FAILED
+);
 
-export const fetchDetailTitle: any = action$ =>
-  action$.pipe(
-    ofType(actionTypes.FETCH_DETAIL_TITLE),
-    mergeMap((action: any) =>
-      ajax
-        .getJSON(`http://localhost:3005/api/Forms/${action.payload}`)
-        .pipe(map(response => fetchDetailTitleFulfilled(response)))
-    )
-  );
+export const fetchDetailTitle = fetchData(
+  'getJSON',
+  `Forms/:id`,
+  null,
+  null,
+  actionTypes.FETCH_DETAIL_TITLE,
+  actionTypes.FETCH_DETAIL_TITLE_FULFILLED,
+  actionTypes.FETCH_DETAIL_TITLE_FAILED
+);
 
-export const voteDetail: any = action$ =>
-  action$.pipe(
-    ofType(actionTypes.VOTE_DETAIL),
-    mergeMap((action: any) =>
-      ajax
-        .post(`http://localhost:3005/api/Questions/${action.payload}/vote`)
-        .pipe(map(response => voteDetailFulfilled(response)))
-    )
-  );
+export const voteDetail = fetchData(
+  'post',
+  `Questions/:id/vote`,
+  null,
+  null,
+  actionTypes.VOTE_DETAIL,
+  actionTypes.VOTE_DETAIL_FULFILLED,
+  actionTypes.VOTE_DETAIL_FAILED
+);

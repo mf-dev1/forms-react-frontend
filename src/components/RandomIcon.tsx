@@ -6,8 +6,7 @@ import FolderIcon from '@material-ui/icons/Folder';
 import Note from '@material-ui/icons/Note';
 
 export default () => {
-  const getRandomElement = (items: any) =>
-    items.sort(() => 0.5 - Math.random())[0];
+  const getRandomElement = items => items.sort(() => 0.5 - Math.random())[0];
   const controlList = {
     Assessment,
     Assignment,

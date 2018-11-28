@@ -1,26 +1,18 @@
-/**
- * Object which stores all redux action types used in application
- * @type {Object}
- */
-const actionTypes = {
-  // home reducer
-  FETCH_HOME: 'FETCH_HOME',
-  FETCH_HOME_FULFILLED: 'FETCH_HOME_FULFILLED',
-  FETCH_HOME_FAILED: 'FETCH_HOME_FAILED',
+// home reducer
+export const FETCH_HOME = 'FETCH_HOME';
+export const FETCH_HOME_FULFILLED = 'FETCH_HOME_FULFILLED';
+export const FETCH_HOME_FAILED = 'FETCH_HOME_FAILED';
 
-  // detail reducer
-  FETCH_DETAIL: 'FETCH_DETAIL',
-  FETCH_DETAIL_FULFILLED: 'FETCH_DETAIL_FULFILLED',
-  FETCH_DETAIL_FAILED: 'FETCH_DETAIL_FAILED',
+// detail reducer
+export const FETCH_DETAIL = 'FETCH_DETAIL';
+export const FETCH_DETAIL_FULFILLED = 'FETCH_DETAIL_FULFILLED';
+export const FETCH_DETAIL_FAILED = 'FETCH_DETAIL_FAILED';
 
-  FETCH_DETAIL_TITLE: 'FETCH_DETAIL_TITLE',
-  FETCH_DETAIL_TITLE_FULFILLED: 'FETCH_DETAIL_TITLE_FULFILLED',
-  FETCH_DETAIL_TITLE_FAILED: 'FETCH_DETAIL_TITLE_FAILED',
+export const FETCH_DETAIL_TITLE = 'FETCH_DETAIL_TITLE';
+export const FETCH_DETAIL_TITLE_FULFILLED = 'FETCH_DETAIL_TITLE_FULFILLED';
+export const FETCH_DETAIL_TITLE_FAILED = 'FETCH_DETAIL_TITLE_FAILED';
 
-  // detail reducer - answer question and choose one option
-  VOTE_DETAIL: 'VOTE_DETAIL',
-  VOTE_DETAIL_FULFILLED: 'VOTE_DETAIL_FULFILLED',
-  VOTE_DETAIL_FAILED: 'VOTE_DETAIL_FAILED',
-};
-
-export default actionTypes;
+// detail reducer - answer question and choose one option
+export const VOTE_DETAIL = 'VOTE_DETAIL';
+export const VOTE_DETAIL_FULFILLED = 'VOTE_DETAIL_FULFILLED';
+export const VOTE_DETAIL_FAILED = 'VOTE_DETAIL_FAILED';

@@ -103,7 +103,7 @@ class Detail extends React.Component<AllProps, State> {
     );
   }
 
-  private handleChange = (event: any) => {
+  private handleChange = event => {
     this.setState({ formValue: event.target.value });
   };
 }

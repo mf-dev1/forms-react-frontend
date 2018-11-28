@@ -33,9 +33,7 @@ for more commands refer `package.json`
 Application use REST-API: forms-rest-api. More infromations in readme. 
 
 ## Todo
-- Epics/Api layer refactoring
 - Show charts
-- HOC for loading and error
 - Tests
 
 ## Deployment

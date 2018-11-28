@@ -1,4 +1,4 @@
-import actionTypes from '../constants/actionTypes';
+import * as actionTypes from '../constants/actionTypes';
 
 // action creators
 export const fetchDetail = payload => ({

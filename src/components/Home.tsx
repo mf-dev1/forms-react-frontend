@@ -25,7 +25,7 @@ type AllProps = HomeProps & WithStyles<typeof styles>;
 class Home extends React.Component<AllProps> {
   public render() {
     const items = this.props.items || [];
-    const MyLink = (props: any) => <Link to={props.href} {...props} />;
+    const MyLink = props => <Link to={props.href} {...props} />;
 
     return (
       <div className="home-container">

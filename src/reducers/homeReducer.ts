@@ -1,4 +1,4 @@
-import actionTypes from '../constants/actionTypes';
+import * as actionTypes from '../constants/actionTypes';
 import { Reducer } from 'redux';
 import { Action } from '../actions';
 

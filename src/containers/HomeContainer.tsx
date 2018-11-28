@@ -4,14 +4,14 @@ import { bindActionCreators } from 'redux';
 import { ApplicationState } from '../reducers';
 import { fetchHome } from '../actions/homeActions';
 import Home from '../components/Home';
-import Loader from '../components/Loader';
-import ConnectionError from '../components/ConnectionError';
+import WithLoading from '../components/WithLoading';
+
 import { HomeState } from '../reducers/homeReducer';
 import { ConnectedReduxProps } from '../reducers/index';
 import { RouteComponentProps } from 'react-router-dom';
 
 interface PropsFromDispatch {
-  fetchHome: () => any;
+  fetchHome: typeof fetchHome;
 }
 
 type AllProps = HomeState &
@@ -26,14 +26,11 @@ class HomeContainer extends React.Component<AllProps> {
 
   public render() {
     const items = this.props.data || [];
+    const loading = this.props.loading;
+    const errors = this.props.errors;
+    const HomeWithLoading = WithLoading(Home);
 
-    if (this.props.loading) {
-      return <Loader />;
-    } else if (this.props.errors) {
-      return <ConnectionError />;
-    } else {
-      return <Home items={items} />;
-    }
+    return <HomeWithLoading loading={loading} errors={errors} items={items} />;
   }
 }
 

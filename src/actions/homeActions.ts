@@ -1,7 +1,8 @@
-import actionTypes from '../constants/actionTypes';
+import * as actionTypes from '../constants/actionTypes';
 
 // action creators
-export const fetchHome = payload => ({ type: actionTypes.FETCH_HOME, payload });
+export const fetchHome = () => ({ type: actionTypes.FETCH_HOME });
+
 export const fetchHomeFulfilled = payload => ({
   type: actionTypes.FETCH_HOME_FULFILLED,
   payload,
