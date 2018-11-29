@@ -45,11 +45,10 @@ class DetailContainer extends React.Component<AllProps> {
 
   public render() {
     const id = this.props.match.params.id;
-    const loading = this.props.loading;
-    const errors = this.props.errors;
     const title = this.props.meta ? this.props.meta.title : '';
     const items = this.props.data || [];
-
+    const loading = this.props.loading;
+    const errors = this.props.errors;
     const DetailWithLoading = WithLoading(Detail);
     const DetailResultsWithLoading = WithLoading(DetailResults);
 

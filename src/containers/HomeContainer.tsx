@@ -21,6 +21,7 @@ type AllProps = HomeState &
 
 class HomeContainer extends React.Component<AllProps> {
   public componentDidMount() {
+    console.log('componentDidMount');
     this.props.fetchHome();
   }
 
