@@ -2,6 +2,7 @@ import * as React from 'react';
 import { create } from 'react-test-renderer';
 import ConnectionError from '../../components/ConnectionError';
 
+// use react-test-renderer without  enzyme
 describe('ConnectionError component', () => {
   test('it shows the expected text)', () => {
     const component = create(<ConnectionError />);
@@ -15,8 +16,6 @@ describe('ConnectionError component', () => {
         el.children &&
         el.children[0] === 'Connection error!'
     );
-    // console.log('debug', component.toJSON());
-    // console.log('debug', component.toTree());
     expect(text).toHaveLength(1);
   });
 });
