@@ -2,7 +2,7 @@ import * as React from 'react';
 import { create } from 'react-test-renderer';
 import ConnectionError from '../../components/ConnectionError';
 
-// use react-test-renderer without  enzyme
+// use react-test-renderer without enzyme
 describe('ConnectionError component', () => {
   test('it shows the expected text)', () => {
     const component = create(<ConnectionError />);
