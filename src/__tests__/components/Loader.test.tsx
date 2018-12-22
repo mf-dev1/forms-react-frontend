@@ -12,7 +12,7 @@ describe('Loader component', () => {
 
   // use enzyme
   it('it matches the enzyme snapshot', () => {
-    const component = shallow(<Loader />);
-    expect(component).toMatchSnapshot();
+    const wrapper = shallow(<Loader />);
+    expect(wrapper).toMatchSnapshot();
   });
 });

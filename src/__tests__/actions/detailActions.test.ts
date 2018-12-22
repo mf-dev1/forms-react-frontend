@@ -1,4 +1,4 @@
-import * as actions from '../../actions/detailActions';
+import * as actions from '../../actions';
 import * as actionTypes from '../../constants/actionTypes';
 
 describe('Detail actions', () => {

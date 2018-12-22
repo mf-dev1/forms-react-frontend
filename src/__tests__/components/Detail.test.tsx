@@ -1,6 +1,4 @@
 import * as React from 'react';
-// import { shallow } from 'enzyme';
-// import { createShallow } from '@material-ui/core/test-utils';
 import { createMount } from '@material-ui/core/test-utils';
 
 import Detail from '../../components/Detail';

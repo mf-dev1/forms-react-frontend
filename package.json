@@ -75,7 +75,7 @@
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}",
       "!/node_modules/",
-      "!src/index.ts",
+      "!src/index.tsx",
       "!src/registerServiceWorker.ts"
     ]
   }
