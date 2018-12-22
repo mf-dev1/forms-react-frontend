@@ -34,7 +34,6 @@ Application use REST-API: forms-rest-api. More infromations in readme.
 
 ## Todo
 - Show charts
-- Tests
 
 ## Deployment
 
