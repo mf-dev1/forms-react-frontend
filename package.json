@@ -14,6 +14,8 @@
     "@types/react-redux": "6.0.9",
     "@types/react-router-dom": "4.3.1",
     "@types/react-router-redux": "5.0.16",
+    "enzyme": "3.7.0",
+    "enzyme-adapter-react-16": "1.6.0",
     "history": "4.7.2",
     "husky": "1.1.2",
     "lint-staged": "7.3.0",
@@ -61,10 +63,7 @@
       "git add"
     ]
   },
-  "devDependencies": {
-    "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.6.0"
-  },
+  "devDependencies": {},
   "browserslist": [
     ">0.2%",
     "not dead",
