@@ -26,25 +26,25 @@ interface RouteParams {
 
 type AllProps = DetailState &
   PropsFromDispatch &
-  RouteComponentProps<RouteParams> &
-  ConnectedReduxProps;
+  Partial<RouteComponentProps<RouteParams>> &
+  Partial<ConnectedReduxProps>;
 
-class DetailContainer extends React.Component<AllProps> {
+export class DetailContainer extends React.Component<AllProps> {
   public componentDidMount() {
-    const id = this.props.match.params.id;
+    const id = this.props.match ? this.props.match.params.id : '';
     this.props.fetchDetail(id);
     this.props.fetchDetailTitle(id);
   }
 
   public componentDidUpdate(prevProps, prevState) {
-    const id = this.props.match.params.id;
+    const id = this.props.match ? this.props.match.params.id : '';
     if (!prevProps.voted && this.props.voted) {
       this.props.fetchDetail(id);
     }
   }
 
   public render() {
-    const id = this.props.match.params.id;
+    const id = this.props.match ? this.props.match.params.id : '';
     const title = this.props.meta ? this.props.meta.title : '';
     const items = this.props.data || [];
     const loading = this.props.loading;

@@ -16,12 +16,11 @@ interface PropsFromDispatch {
 
 type AllProps = HomeState &
   PropsFromDispatch &
-  RouteComponentProps<{}> &
-  ConnectedReduxProps;
+  Partial<RouteComponentProps<{}>> &
+  Partial<ConnectedReduxProps>;
 
-class HomeContainer extends React.Component<AllProps> {
+export class HomeContainer extends React.Component<AllProps> {
   public componentDidMount() {
-    console.log('componentDidMount');
     this.props.fetchHome();
   }
 
