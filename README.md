@@ -11,6 +11,7 @@ Application integrate:
 * [Redux observable](https://redux-observable.js.org/)
 * [Material-UI](https://material-ui.com/)
 * react-chartjs-2
+* [chartjs](https://www.chartjs.org/)
 * prettier
 
 Tested with:
