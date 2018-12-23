@@ -60,6 +60,10 @@ Application use REST-API: [forms-rest-api](https://github.com/mf256/forms-rest-a
 ![Screen 3](/doc/screen3.png)
 
 
+<img src="/doc/screen1.png" alt="Screen 1" width="500">
+<img src="/doc/screen2.png" alt="Screen 2" width="500">
+<img src="/doc/screen3.png" alt="Screen 3" width="500">
+
 ## Todo
 
 
