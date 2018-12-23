@@ -1,11 +1,27 @@
 # forms-react-frontend
 
 A sample application created [Create React App - v1.1.4](https://github.com/facebookincubator/create-react-app).
-Application integrate Typescript, Redux, React Router, Redux observable and Material-UI.
+
+Application integrate:
+
+* [Typescript](https://www.typescriptlang.org/)
+* [React](https://reactjs.org/)
+* [Redux](https://redux.js.org/)
+* React Router
+* [Redux observable](https://redux-observable.js.org/)
+* [Material-UI](https://material-ui.com/)
+* react-chartjs-2
+* prettier
+
+Tested with:
+
+* [jest](https://jestjs.io/)
+* react-test-renderer
+* [enzyme](https://airbnb.io/enzyme/)
 
 ## Architecture
 
-![Forms applications architecture](/doc/forms-architecture.png)
+![Forms applications architecture](https://github.com/mf256/forms-rest-api/blob/master/doc/forms-architecture.png)
 
 ## Getting Started
 
