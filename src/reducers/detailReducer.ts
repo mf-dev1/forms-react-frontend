@@ -47,7 +47,7 @@ const reducer: Reducer<DetailState> = (
       return { ...state, loading: false, errors: action.payload as string };
     }
     case actionTypes.FETCH_DETAIL_TITLE: {
-      return { ...state, loading: true };
+      return { ...state, loading: true, voted: false };
     }
     case actionTypes.FETCH_DETAIL_TITLE_FULFILLED: {
       return { ...state, loading: false, meta: action.payload as Meta };

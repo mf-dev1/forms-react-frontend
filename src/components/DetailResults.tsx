@@ -9,6 +9,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import FormLabel from '@material-ui/core/FormLabel';
 
+import { Pie } from 'react-chartjs-2';
+
 const styles = theme => ({
   grid: {
     maxWidth: 480,
@@ -37,7 +39,21 @@ class DetailResults extends React.Component<AllProps> {
   public render() {
     const title = this.props.title;
     const items = this.props.items || [];
-
+    const chartData = {
+      labels: items.map((item, i) => item.title),
+      datasets: [
+        {
+          label: 'Results',
+          data: items.map((item, i) => item.votes),
+          backgroundColor: items.map((item, i) => this.getRandomColor()),
+        },
+      ],
+    };
+    const chartOptions = {
+      legend: {
+        display: false,
+      },
+    };
     return (
       <div className="detail-container">
         <Grid
@@ -50,6 +66,9 @@ class DetailResults extends React.Component<AllProps> {
           <Grid item>
             <Typography variant="h6">{title}</Typography>
             <FormLabel component="legend">Results:</FormLabel>
+          </Grid>
+          <Grid item>
+            <Pie data={chartData} options={chartOptions} /> : <div />
           </Grid>
           <Grid item>
             <List>
@@ -73,6 +92,13 @@ class DetailResults extends React.Component<AllProps> {
         </Grid>
       </div>
     );
+  }
+
+  private getRandomColor() {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    return 'rgb(' + r + ',' + g + ',' + b + ')';
   }
 }
 

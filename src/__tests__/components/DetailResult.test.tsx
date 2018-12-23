@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { createMount } from '@material-ui/core/test-utils';
 
+import { Pie } from 'react-chartjs-2';
+jest.mock('react-chartjs-2');
+
 import DetailResults from '../../components/DetailResults';
 
 describe('DetailResults component', () => {

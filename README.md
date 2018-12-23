@@ -3,6 +3,10 @@
 A sample application created [Create React App - v1.1.4](https://github.com/facebookincubator/create-react-app).
 Application integrate Typescript, Redux, React Router, Redux observable and Material-UI.
 
+## Architecture
+
+![Forms applications architecture](/doc/forms-architecture.png)
+
 ## Getting Started
 
 1. Clone this repo
@@ -32,8 +36,15 @@ for more commands refer `package.json`
 
 Application use REST-API: forms-rest-api. More infromations in readme. 
 
+## Print screens
+
+![Screen 1](/doc/screen1.png)
+![Screen 2](/doc/screen2.png)
+![Screen 3](/doc/screen3.png)
+
+
 ## Todo
-- Show charts
+
 
 ## Deployment
 
