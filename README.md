@@ -2,7 +2,7 @@
 
 A sample application created [Create React App - v1.1.4](https://github.com/facebookincubator/create-react-app).
 
-Application integrate:
+## Technologies
 
 * [Typescript](https://www.typescriptlang.org/)
 * [React](https://reactjs.org/)
@@ -24,7 +24,19 @@ Tested with:
 
 ![Forms applications architecture](https://github.com/mf256/forms-rest-api/blob/master/doc/forms-architecture.png)
 
-## Getting Started
+## Features
+* Main page with list of possibles questions.
+* Choose one question and go to new page with list of possibles answers.
+* After choosing one answer you can see table and chart with statistics. 
+
+## Screenshots
+
+<img src="/doc/screen1.png" alt="Screen 1" width="500">
+<img src="/doc/screen2.png" alt="Screen 2" width="500">
+<img src="/doc/screen3.png" alt="Screen 3" width="500">
+
+## Setup
+How to run this project.
 
 1. Clone this repo
 
@@ -53,14 +65,8 @@ for more commands refer `package.json`
 
 Application use REST-API: [forms-rest-api](https://github.com/mf256/forms-rest-api). More infromations in readme. 
 
-## Print screens
-
-<img src="/doc/screen1.png" alt="Screen 1" width="500">
-<img src="/doc/screen2.png" alt="Screen 2" width="500">
-<img src="/doc/screen3.png" alt="Screen 3" width="500">
-
-## Todo
-
+## Status
+Project is finished.
 
 ## Deployment
 
