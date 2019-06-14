@@ -1,6 +1,22 @@
 # forms-react-frontend
 
-A sample application created [Create React App - v1.1.4](https://github.com/facebookincubator/create-react-app).
+Simple react application using express REST api.
+
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Architecture](#architecture)
+* [Features](#features)
+* [Screenshots](#screenshots)
+* [Setup](#setup)
+* [Backend](#backend)
+* [Status](#status)
+* [Deployment](#deployment)
+* [License](#license)
+
+
+## General info
+Goal of project is build React&Redux application from scratch.
 
 ## Technologies
 
@@ -61,7 +77,7 @@ To create production ready codes -
 for more commands refer `package.json`
 
 
-## Backed
+## Backend
 
 Application use REST-API: [forms-rest-api](https://github.com/mf256/forms-rest-api). More infromations in readme. 
 
@@ -73,6 +89,5 @@ Project is finished.
 Refer [deployment](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#deployment)
 
 ## License
-
 MIT
 
